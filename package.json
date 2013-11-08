@@ -1,0 +1,31 @@
+{
+  "name": "uu",
+  "description": "UnderscoreUnderscore - Structured global class creation utilities.",
+  "version": "0.1.4",
+  "keywords": [
+    "namespace",
+    "class",
+    "global"
+  ],
+  "repository": {
+    "url": "http://github.com/sixones/uu"
+  },
+  "main": "__",
+  "scripts": {
+    "test": "mocha tests/__.js --require ./src/__ --reporter spec",
+    "compile": "node compile.js"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "closure-compiler": ">=0.2.3"
+  },
+  "optionalDependencies": {
+
+  },
+  "engines": {
+    "node": "*"
+  }
+}
