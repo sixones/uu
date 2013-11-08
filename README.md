@@ -7,82 +7,82 @@ objects in Javascript applications.
 
 ### Creating a class
 
-  // create a class called example.Hello
-  __.create('example.Hello', {
-    world: function() {
-      alert('Hello World!');
-    }
-  });
+    // create a class called example.Hello
+    __.create('example.Hello', {
+      world: function() {
+        alert('Hello World!');
+      }
+    });
 
-  // call Hello#world as a static class
-  example.Hello.world();
+    // call Hello#world as a static class
+    example.Hello.world();
 
-  // call Hello#world on an instance
-  var hello = new example.Hello();
-  hello.world();
+    // call Hello#world on an instance
+    var hello = new example.Hello();
+    hello.world();
 
 ### Creating different static and instance declarations
 
-  // create a class called example.Hello with different methods on the static
-  // and instanced versions
-  __.create('example.Hello', {
-    world: function() {
-      alert('Hello Static World!');
-    }
-  }, {
-    world: function() {
-      alert('Hello Instanced World!');
-    }
-  });
+    // create a class called example.Hello with different methods on the static
+    // and instanced versions
+    __.create('example.Hello', {
+      world: function() {
+        alert('Hello Static World!');
+      }
+    }, {
+      world: function() {
+        alert('Hello Instanced World!');
+      }
+    });
 
-  // alert Hello Static World!
-  example.Hello.world();
+    // alert Hello Static World!
+    example.Hello.world();
 
-  // alert Hello Instanced World!
-  var hello = new example.Hello();
-  hello.world();
+    // alert Hello Instanced World!
+    var hello = new example.Hello();
+    hello.world();
 
 ### Extending a class
 
-  __.create('example.Talker', {
-    speak: function() {
-      alert('Foobar!');
-    }
-  });
+    __.create('example.Talker', {
+      speak: function() {
+        alert('Foobar!');
+      }
+    });
 
-  __.extend('example.Hello', example.Talker, {
-    speak: function() {
-      alert('Hello World!');
-    }
-  });
+    __.extend('example.Hello', example.Talker, {
+      speak: function() {
+        alert('Hello World!');
+      }
+    });
 
-  // alert Foobar!
-  example.Talker.speak();
+    // alert Foobar!
+    example.Talker.speak();
 
-  // alert Hello World!
-  example.Hello.speak();
+    // alert Hello World!
+    example.Hello.speak();
 
 ### Inside Node.JS / Rhino
 
 Talker.js
 
-  require('__');
+    require('__');
 
-  __.create('example.Talker', {
-    speak: function() {
-      console.log('Foobar!');
-    }
-  });
+    __.create('example.Talker', {
+      speak: function() {
+        console.log('Foobar!');
+      }
+    });
 
 main.js
   
-  // we dont need to assign the require as __ registers the classes to the Node.JS
-  // global variables, so example.Talker will always be available after the require
-  require('Talker');
+    // we dont need to assign the require as __ registers the classes to the Node.JS
+    // global variables, so example.Talker will always be available after the require
+    require('Talker');
 
-  // outputs Foobar!
-  var talker = new example.Talker();
-  talker.speak();
+    // outputs Foobar!
+    var talker = new example.Talker();
+    talker.speak();
 
 ## Compatibility
 
